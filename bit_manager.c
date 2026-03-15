@@ -4,10 +4,10 @@ void verify(unsigned char data, unsigned char bit){
     unsigned char mask = 1<<bit;
 
     if ((mask & data) == mask) {
-        printf("o bit %dº está ligado\n", bit);
+        printf("The %d bit is ON\n", bit);
     } 
     else {
-        printf("o bit %dº está desligado\n", bit);      
+        printf("The %d bit is OFF\n", bit);      
     }
 }
 
@@ -16,13 +16,13 @@ unsigned char set_bit(unsigned char data, unsigned char bit){
     unsigned char mask = 1<<bit;
 
     if ((data & mask) == mask) {
-        printf("The bit is already turned on.\n");
+        printf("The bit is already turned ON.\n");
         return data;
     }
 
     data = data | mask;    
 
-    printf("The bit is now turned on.\n");
+    printf("The bit is now turned ON.\n");
     return data;    
 } 
 
@@ -46,16 +46,16 @@ int main(){
     while (i == 0) {
 
         if (j == 0) {
-            printf("Olá ziqui,\nDiz um número: ");
+            printf("Hey, what's up?\nEnter a number:");
             scanf("%hhu", &data);
             j = 1;
         }
 
-        printf("Qual é a operaçao que queres fazer?:\n"
+        printf("Choose an operation to do?:\n"
         "_________________________________________\n\n"
         "1 - Verify\n"
-        "2 - Turn On\n"
-        "3 - Turn off\n"
+        "2 - Turn ON\n"
+        "3 - Turn OFF\n"
         "4 - Choose another number\n"
         "5 - Exit\n"
         "_________________________________________\n");
@@ -64,17 +64,17 @@ int main(){
 
         switch (instruction) {
         case 1 :
-            printf("Qual é o bit que queres ver?: \n");
+            printf("which bit do you want to see?: \n");
             scanf("%hhu", &bit);
             verify(data, bit);
             break;
         case 2 :            
-            printf("What's the bit that you want to turn on?: \n");
+            printf("which bit you want to turn on?: \n");
             scanf("%hhu", &bit);
             data = set_bit(data,  bit);
             break;
         case 3 :
-            printf("What's the bit that you want to turn off?: \n");                
+            printf("which bit you want to turn off?: \n");                
             scanf("%hhu", &bit);
             data = clear_bit(data, bit);
             break;
@@ -85,7 +85,7 @@ int main(){
             i = 1;
             break;
         default:
-            printf("incorrect instruction\n");
+            printf("Incorrect instruction\n");
             break;
         }
     
