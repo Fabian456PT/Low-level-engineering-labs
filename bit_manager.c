@@ -6,20 +6,23 @@ int main(){
     printf("Olá ziqui,\nDiz um número: ");
     scanf("%hhu", &dados);
 
-    for (unsigned char i = 0; i <= 8; i++) {
-        if ((mascara & dados) == 1) {
-            printf("o bit %d está ligado", bit);
-        }
-        
-        
+    printf("Qual é o bit que queres ver?: ");
+    scanf("%hhu", &bit);
+
+
+    mascara = mascara<<(bit-1);
+    
+    dados = mascara&dados;
+
+    if ((mascara & dados) == mascara) {
+        printf("o bit %dº está ligado", bit);
+        return 0;
+    } 
+    else {
+        printf("o bit %dº está desligado", bit);      
+        return 0;  
     }
-
-
-
-
-    printf("O número: %d\n", dados);
-    printf("O número: %x\n", dados);
-
+    
 
     return 0;
 
