@@ -40,6 +40,17 @@ unsigned char clear_bit(unsigned char data, unsigned char bit){
     return data;
 }
 
+unsigned char toggle_bit(unsigned char data, unsigned char bit){
+
+    unsigned char mask = 1<<bit;
+
+    data = data ^ mask;
+    
+    printf("The bit was successfully toggled.\n");
+    return data;
+
+}
+
 int main(){
     unsigned char i = 0, j = 0, data = 0, bit = 0, instruction = 0;
 
@@ -56,8 +67,9 @@ int main(){
         "1 - Verify\n"
         "2 - Turn ON\n"
         "3 - Turn OFF\n"
-        "4 - Choose another number\n"
-        "5 - Exit\n"
+        "4 - Toggle bit\n"
+        "5 - Choose another number\n"
+        "6 - Exit\n"
         "_________________________________________\n");
 
         scanf("%hhu", &instruction);
@@ -78,10 +90,15 @@ int main(){
             scanf("%hhu", &bit);
             data = clear_bit(data, bit);
             break;
-        case 4 :    
+        case 4:
+            printf("which bit do you want to toggle?: \n");
+            scanf("%hhu", &bit);
+            data = toggle_bit(data, bit);
+            break;
+        case 5 :    
             j = 0;
             break;
-        case 5 :
+        case 6 :
             i = 1;
             break;
         default:
