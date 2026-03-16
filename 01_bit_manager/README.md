@@ -6,10 +6,11 @@ A modular C-based utility designed to interact with individual bits within an 8-
 - **Verify**: Check if a specific bit is set (1) or clear (0).
 - **Turn On**: Set a specific bit to 1 using the `OR` bitwise operator.
 - **Turn Off**: Clear a specific bit to 0 using `AND` and `NOT` bitwise operators.
-- **Interactive Menu**: A persistent CLI interface that allows multiple operations without restarting the program.
+- **Toggle**: Invert a bit's state (0 to 1 or 1 to 0) using the `XOR` operator.
+- **Interactive Menu**: A persistent CLI interface that allows multiple operations.
 
 ## 💻 Core Concepts
-- **Bitwise Operators**: Mastery of `&`, `|`, `~`, and `<<`.
+- **Bitwise Operators**: Mastery of `&`, `|`, `~`, `^`, and `<<`.
 - **Modularity**: Logic isolated into dedicated functions for better maintainability.
 - **Memory Efficiency**: Utilizing the smallest possible data types for performance.
 
